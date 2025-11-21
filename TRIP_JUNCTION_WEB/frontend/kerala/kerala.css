@@ -1,0 +1,330 @@
+/* --------------------------------- */
+/* Kerala Detail Page Specific Styles */
+/* --------------------------------- */
+
+.package-title {
+    color: #047857; /* A deep green for Kerala */
+    font-weight: 700;
+}
+
+.package-tagline {
+    color: #374151;
+    font-style: italic;
+    font-size: 1.25rem;
+}
+
+.kerala-banner {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 400px; /* Fixed height for visual consistency */
+    object-fit: cover;
+}
+
+.package-info-card {
+    border-top: 5px solid #047857;
+}
+
+.price-highlight {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #b91c1c; /* A strong color for price */
+}
+
+/* Itinerary Timeline Styling */
+.itinerary-header {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    color: #1f2937;
+}
+
+.itinerary-timeline {
+    position: relative;
+    padding: 20px 0 20px 30px; /* Left padding for the line */
+}
+
+.itinerary-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 3px;
+    background: #a7f3d0; /* Light green line */
+}
+
+.itinerary-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-point {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 0 5px #fffbea; /* White ring around the dot */
+}
+
+.itinerary-content {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 30px; /* Space for the timeline point */
+}
+
+.itinerary-content h4 {
+    color: #047857;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.itinerary-content p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 0;
+}
+
+/* --- MEDIA GALLERY STYLES --- */
+
+/* Container to enable horizontal scrolling */
+.media-gallery-scroll {
+    overflow-x: auto; 
+    padding-bottom: 10px; /* Gives space for scroll bar if visible */
+    
+    /* Hide scrollbar for cleaner look (optional but recommended) */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.media-gallery-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Fixed width for each media item in the horizontal scroll */
+.media-item {
+    width: 250px; /* Adjusted width for 5-6 items to scroll smoothly */
+}
+
+.media-img {
+    height: 150px; /* Adjusted height to accommodate smaller width */
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Ensure video embed fits the media item size */
+.video-item .ratio-16x9 {
+    height: 150px; /* Adjusted height */
+}
+.video-item .ratio-16x9 iframe {
+    border-radius: 6px; /* Match image rounding */
+}
+
+/* --- PACKAGE DETAIL BREAKDOWN STYLES --- */
+.package-details-breakdown {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8fcfb; /* Very light background for distinction */
+    border-left: 4px solid #34d399; /* Green accent border */
+    border-radius: 0 4px 4px 0;
+}
+.package-details-breakdown h6 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #047857;
+}
+.package-details-breakdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+}
+.package-details-breakdown li {
+    margin-bottom: 4px;
+}
+.package-details-breakdown li strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+/* --- DAY ITINERARY VIDEO --- */
+.day-video {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.day-video iframe {
+    width: 100%;
+    height: 400px; /* Large cinematic look */
+    border: none;
+}
+
+/* --- DAY PHOTO GALLERY BELOW VIDEO --- */
+.day-gallery {
+    margin-top: 15px;
+}
+
+.day-gallery .media-gallery-scroll {
+    overflow-x: auto;
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.day-gallery .media-item {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.day-gallery .media-img {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.day-gallery .media-img:hover {
+    transform: scale(1.05);
+}
+/* ---------------------------- */
+/* ✨ Scroll Fade-In Animations */
+/* ---------------------------- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: smooth delay for cascading look */
+.fade-in.delay-1 {
+  transition-delay: 0.2s;
+}
+.fade-in.delay-2 {
+  transition-delay: 0.4s;
+}
+.fade-in.delay-3 {
+  transition-delay: 0.6s;
+}
+.day-video iframe {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+.day-video iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Scroll Progress Bar ---------- */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: #047857; /* Kerala green */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.18s linear;
+}
+
+/* Optional subtle shadow */
+#scrollProgressBar::after {
+  content: "";
+  display:block;
+  height:100%;
+  box-shadow:0 2px 6px rgba(4,120,87,0.18);
+}
+
+/* ---------- Popover image sizing ---------- */
+.popover-img {
+  display:block;
+  max-width:180px;
+  height:auto;
+}
+.travel-tip {
+  background-color: #ecfdf5;   /* light green background */
+  border-radius: 4px;
+  padding: 2px 4px;
+  color: #047857;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.travel-tip:hover {
+  background-color: #d1fae5;   /* slightly darker on hover */
+  color: #065f46;
+}
+
+/* 🌿 Modern Footer Styling */
+.kerala-footer {
+  background: linear-gradient(135deg, #065f46, #047857);
+  color: #f1f5f9;
+  font-family: 'Poppins', sans-serif;
+  border-top: 4px solid #34d399;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+}
+
+.kerala-footer h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #d1fae5;
+}
+
+.footer-contact p {
+  margin-bottom: 0.4rem;
+  color: #e5f9f0;
+}
+
+.footer-link {
+  color: #d1fae5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social-link {
+  color: #d1fae5;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+

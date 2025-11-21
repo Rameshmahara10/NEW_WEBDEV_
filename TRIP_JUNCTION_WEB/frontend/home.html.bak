@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Junction | India Travel Planner</title>
+  <meta name="description" content="Trip Junction — your complete India travel planner." />
+  <link rel="stylesheet" href="home.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (optional — remove if you don't use bi classes) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="top"></div>
+
+  <!--  Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <!-- Logo + Title -->
+      <a class="navbar-brand d-flex align-items-center" href="#" onclick="location.reload()">
+
+        <img src="logo.png" alt="Trip Junction Logo" class="logo-circle me-2"
+          style="width:40px; height:40px; border-radius:50%;">
+        <div>
+          <strong>Trip Junction</strong><br>
+          <small>Your Complete India Travel Planner</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- ✅ Home link  -->
+            <a class="nav-link active" href="#" onclick="location.reload()">Home</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#packages">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+        </ul>
+
+        <!-- Search -->
+
+        <form class="d-flex position-relative" role="search" id="searchForm" onsubmit="searchPlace(event)">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search places"
+            autocomplete="off">
+          <button type="submit" class="btn btn-outline-success">Search</button>
+
+
+          <div id="suggestBox" class="suggest-box"></div>
+        </form>
+
+
+        <div class="mx-2">
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</button>
+        </div>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- 🌿 LOGIN MODAL -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold text-success" id="loginModalLabel">
+            Welcome Back 🌴
+          </h5>
+          <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+
+        </div>
+
+        <div class="modal-body px-4 pb-4">
+          <p class="text-muted small mb-3">Log in to plan, track, and save your Kerala trips with Trip Junction!</p>
+
+          <!-- ✅ Login Form -->
+          <form id="loginForm">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control form-control-lg rounded-3" id="loginEmail"
+                placeholder="name@email.com" required>
+            </div>
+
+            <div class="mb-3 position-relative">
+              <label class="form-label fw-semibold">Password</label>
+              <input type="password" class="form-control form-control-lg rounded-3" id="loginPassword"
+                placeholder="********" required>
+              <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
+                style="cursor:pointer;"></i>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label small" for="rememberMe">Remember me</label>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 py-2 fw-semibold">Login</button>
+          </form>
+
+          <div class="text-center mt-3">
+            <small>Don't have an account?
+              <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"
+                class="text-success text-decoration-none fw-semibold">Sign Up</a>
+            </small>
+          </div>
+
+          <div class="text-center mt-3 border-top pt-3">
+            <button class="btn btn-outline-success w-100 d-flex align-items-center justify-content-center gap-2">
+              <i class="bi bi-google"></i> Continue with Google
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 🌿 SIGNUP MODAL -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold text-success" id="signupModalLabel">
+            Join Trip Junction 🚀
+          </h5>
+          <button type="button" class="btn btn-primary" onclick="signupUser()">Sign Up</button>
+
+        </div>
+
+        <div class="modal-body px-4 pb-4">
+          <p class="text-muted small mb-3">Create your account and start exploring Kerala like never before!</p>
+
+          <!-- ✅ Signup Form -->
+          <form id="signupForm">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Full Name</label>
+              <input type="text" class="form-control form-control-lg rounded-3" id="signupName"
+                placeholder="John Mathew" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control form-control-lg rounded-3" id="signupEmail"
+                placeholder="name@email.com" required>
+            </div>
+
+            <div class="mb-3 position-relative">
+              <label class="form-label fw-semibold">Password</label>
+              <input type="password" class="form-control form-control-lg rounded-3" id="signupPassword"
+                placeholder="********" required>
+              <i class="bi bi-eye-slash toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
+                style="cursor:pointer;"></i>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="terms" required>
+              <label class="form-check-label small" for="terms">
+                I agree to the <a href="#" class="text-success">Terms & Conditions</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 py-2 fw-semibold">Create Account</button>
+          </form>
+
+          <div class="text-center mt-3">
+            <small>Already have an account?
+              <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                class="text-success text-decoration-none fw-semibold">Login</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="hero">
+    <h2>Unlock the Best of India, Fully Planned</h2>
+    <p>From Himalayan treks to Arabian Sea beaches, we craft all-inclusive packages designed for you.</p>
+    <a href="#packages" class="btn">Explore Top Destinations</a>
+  </section>
+
+  <section id="packages">
+    <h2 class="section-title">Our Complete Trip Packages</h2>
+
+    <div class="grid">
+
+      <!-- ✅ Kerala -->
+      <div class="card" id="kerala">
+        <img src="kerala.avif" alt="Kerala">
+        <h3>God's Own Country: Kerala</h3>
+        <p>6 Days / 5 Nights</p>
+        <p>Activity: Luxury Houseboat Cruise</p>
+        <p class="price">₹25,999</p>
+        <a href="/kerala/kerala.html" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Rajasthan -->
+      <div class="card" id="rajistan">
+        <img src="rajistan.webp" alt="Rajasthan">
+        <h3>Royal Heritage: Rajasthan</h3>
+        <p>7 Days / 6 Nights</p>
+        <p>Activity: Desert Camel Safari & Camp</p>
+        <p class="price">₹32,500</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Goa -->
+      <div class="card" id="goa">
+        <img src="baga-sea-beach.jpg" alt="Goa">
+        <h3>Beach & Party: Goa</h3>
+        <p>4 Days / 3 Nights</p>
+        <p>Activity: Watersports & Sunset Cruise</p>
+        <p class="price">₹17,500</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Ladakh -->
+      <div class="card" id="ladhak">
+        <img src="ladak.jpeg" alt="Ladakh">
+        <h3>Himalayan Heights: Ladakh</h3>
+        <p>7 Days / 6 Nights</p>
+        <p>Activity: Bike ride to Pangong Lake</p>
+        <p class="price">₹39,000</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Andaman -->
+      <div class="card" id="andaman">
+        <img src="Andaman.jpg" alt="Andaman">
+        <h3>Tropical Paradise: Andaman</h3>
+        <p>5 Days / 4 Nights</p>
+        <p>Activity: Scuba Diving at Havelock</p>
+        <p class="price">₹28,000</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Golden Triangle -->
+      <div class="card" id="goldentriangle">
+        <img src="delhi-golden-tour.jpg" alt="Golden Triangle">
+        <h3>Imperial Trail: Golden Triangle</h3>
+        <p>5 Days / 4 Nights</p>
+        <p>Activity: Sunrise Visit to the Taj Mahal</p>
+        <p class="price">₹19,500</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Sikkim & Darjeeling -->
+      <div class="card" id="sikkin">
+        <img src="Sikkim.webp" alt="Sikkim">
+        <h3>Queen of Hills: Sikkim & Darjeeling</h3>
+        <p>8 Days / 7 Nights</p>
+        <p>Activity: Darjeeling Toy Train Ride</p>
+        <p class="price">₹35,000</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+      <!-- ✅ Hampi -->
+      <div class="card" id="hampi">
+        <img src="Hampi.jpeg" alt="Hampi">
+        <h3>Ancient Ruins: Hampi</h3>
+        <p>4 Days / 3 Nights</p>
+        <p>Activity: Exploring Virupaksha Temple</p>
+        <p class="price">₹15,000</p>
+        <a href="#contact" class="btn-small">Book</a>
+      </div>
+
+    </div>
+    <p id="noResultMessage" style="text-align:center; display:none; font-weight:bold; margin-top:15px; color:red;">
+      ❗ No destinations found
+    </p>
+
+
+
+    <section class="why">
+      <h2>Why Choose Trip Junction?</h2>
+
+      <div class="why-container">
+
+        <div class="why-card">
+          <div class="why-icon">✔</div>
+          <h3>All-Inclusive Plans</h3>
+          <p>No hidden charges. Flights, hotels & activities covered.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">📍</div>
+          <h3>Expert Guidance</h3>
+          <p>Our team helps you choose the best destinations.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">📞</div>
+          <h3>24/7 Support</h3>
+          <p>Help available throughout your journey.</p>
+        </div>
+
+      </div>
+    </section>
+    <section id="reviews" class="reviews">
+      <h2>Reviews & Feedback</h2>
+      <p>Read what others say about Trip Junction and share your own experience!</p>
+
+      <!-- Review Form -->
+      <div class="review-box">
+        <input type="text" placeholder="Your Name" required>
+        <select required>
+          <option value="">Select Rating ⭐</option>
+          <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+          <option value="4">⭐⭐⭐⭐ - Very Good</option>
+          <option value="3">⭐⭐⭐ - Good</option>
+          <option value="2">⭐⭐ - Fair</option>
+          <option value="1">⭐ - Poor</option>
+        </select>
+        <textarea placeholder="Write your feedback..." required></textarea>
+        <button class="btn">Submit Review</button>
+      </div>
+
+      <!-- Display Reviews -->
+      <div class="review-display">
+        <h3>What People Say</h3>
+
+        <div class="review-card">
+          <strong>Rahul Sharma</strong> ⭐⭐⭐⭐⭐
+          <p>Great travel plans! Budget friendly and good guidance.</p>
+        </div>
+
+        <div class="review-card">
+          <strong>Neha Gupta</strong> ⭐⭐⭐⭐
+          <p>The support team helped us throughout the trip. Loved it!</p>
+        </div>
+
+        <div class="review-card">
+          <strong>Ajay Verma</strong> ⭐⭐⭐⭐
+          <p>Nice experience! Best price compared to others.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>Welcome to Trip Junction! We are passionate about helping people explore beautiful places in India. Whether you
+        are traveling for adventure, relaxation, or family fun, we guide you to the best places with affordable plans.
+      </p>
+
+      <div class="about-box">
+        <h3>Our Mission</h3>
+        <p>To make travel simple and enjoyable for everyone. We believe that every journey should create happy memories.
+        </p>
+
+        <h3>What We Offer</h3>
+        <ul>
+          <li>Best and affordable tour packages</li>
+          <li>Easy and quick booking process</li>
+          <li>24/7 customer support</li>
+          <li>Trusted travel assistance</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <!-- ✅ Firebase v8 Compatible Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+  <!-- ✅ Initialize Firebase (Replace with your real config) -->
+  <script>
+    console.log("✅ Firebase script loaded successfully");
+
+    const firebaseConfig = {
+      apiKey: "YOUR_REAL_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    console.log("✅ Firebase initialized");
+  </script>
+
+  <!-- ✅ Your Auth Script -->
+  <script src="auth.js"></script>
+
+  <!-- ✅ Home + Bootstrap Scripts -->
+  <script src="home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <footer class="footer">
+    <h3>Trip Junction</h3>
+    <p class="footer-text">
+      Your trusted planner for all India travel experiences 🌍
+    </p>
+    <div class="footer-contact">
+      <p>📞 Phone: +91 72950 60470</p>
+      <p>✉ Email: tripjunctionofficial@gmail.com</p>
+    </div>
+    <p class="copyright">© 2025 Trip Junction. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

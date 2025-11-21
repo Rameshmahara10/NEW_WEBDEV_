@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Junction | Kerala Package Details</title>
+
+    <!-- External CSS links -->
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="kerala.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (required for footer icons to appear) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Custom Font: Re-add your font if needed, otherwise Bootstrap default is fine -->
+</head>
+
+<body>
+    <!-- Scroll Progress Bar (place near top of <body>) -->
+    <div id="scrollProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+
+    <!--  Bootstrap Navbar (Reusing structure from homepage.html) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <!-- Logo + Title -->
+            <a class="navbar-brand d-flex align-items-center" href="homepage.html">
+                <img src="logo.png" alt="Trip Junction Logo" class="logo-circle me-2"
+                    style="width:40px; height:40px; border-radius:50%;">
+                <div>
+                    <strong>Trip Junction</strong><br>
+                    <small>Your Complete India Travel Planner</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <!-- Link back to your main homepage file -->
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#packages">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html#reviews">Reviews</a>
+                    </li>
+                </ul>
+
+                <!-- Search and Auth buttons (Keeping the layout consistent) -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search places" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="mx-2">
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <a href="homepage.html#packages" class="btn btn-sm btn-outline-primary mb-4">← Back to All Packages</a>
+
+        <div class="row">
+            <!-- Package Hero/Header -->
+            <div class="col-12 text-center mb-4">
+                <h1 class="display-4 package-title">God's Own Country: Kerala</h1>
+                <p class="lead package-tagline">Lush backwaters, pristine beaches, and aromatic spice gardens.</p>
+            </div>
+
+            <!-- Package Image -->
+            <div class="col-12 mb-5">
+                <img src="kerala-detail.jpg"
+                    onerror="this.src='https://placehold.co/1200x400/059669/ffffff?text=Kerala+Backwaters+Image'"
+                    alt="Kerala Houseboat" class="img-fluid rounded shadow-lg kerala-banner">
+            </div>
+
+            <!-- Key Details Card -->
+            <div class="col-lg-4 mb-4">
+                <div class="card package-info-card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Package Overview</h5>
+                        <hr>
+                        <p><strong><span class="icon">🗓️</span> Duration:</strong> 6 Days / 5 Nights</p>
+                        <p><strong><span class="icon">💰</span> Starting Price:</strong> <span
+                                class="price-highlight">₹25,999</span></p>
+                        <p><strong><span class="icon">✨</span> Highlight Activity:</strong> Luxury Houseboat Cruise on
+                            Alleppey Backwaters.</p>
+                        <p><strong><span class="icon">📍</span> Destinations:</strong> Kochi, Munnar, Thekkady,
+                            Alleppey.</p>
+                        <button class="btn btn-success w-100 mt-3" data-bs-toggle="modal"
+                            data-bs-target="#inquiryModal">
+                            Book This Trip Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Itinerary Timeline -->
+            <div class="col-lg-8">
+                <h2 class="mb-4 itinerary-header">Detailed 6-Day Itinerary</h2>
+
+                <!-- Featured Video Section -->
+                <div class="mb-5 p-3 rounded shadow-sm" style="background-color: #f0fdf4;">
+                    <h3 class="text-center text-success mb-3">Kerala: The Ultimate Travel Film</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="Kerala Featured Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="itinerary-timeline">
+
+                    <!-- DAY 1 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">1</div>
+                        <div class="itinerary-content">
+                            <h4>Day 1 – Arrival in Kochi & Transfer to Munnar</h4>
+                            <p>
+                                Welcome to Kerala! Explore Fort Kochi, enjoy
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    data-bs-trigger="hover focus" data-bs-placement="top"
+                                    title="Kathakali – Traditional Art"
+                                    data-bs-content="<img src='images/kathakali.jpg' class='popover-img rounded mb-2'><br><strong>Kathakali</strong> is a classical dance-drama known for colourful makeup and expressive gestures.">
+                                    Kathakali
+                                </span>
+                                performances, and relax by the seaside.
+                            </p>
+
+
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day1-1.jpg" class="media-img"
+                                            alt="Fort Kochi Beach"></div>
+                                    <div class="media-item"><img src="images/kerala-day1-2.jpg" class="media-img"
+                                            alt="Chinese Fishing Nets"></div>
+                                    <div class="media-item"><img src="images/kerala-day1-3.jpg" class="media-img"
+                                            alt="Kathakali Performance"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 1 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Hill-view resort/hotel in Munnar.</li>
+                                    <li><strong>Food:</strong> Traditional Kerala Sadya dinner.</li>
+                                    <li><strong>Activity to Do:</strong> Evening walk amidst tea gardens.</li>
+                                    <li><strong>Where to Visit:</strong> Kochi Airport, ghat roads to Munnar.</li>
+                                    <li><strong>Famous For:</strong> Starting your journey in “God’s Own Country”.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 2 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">2</div>
+                        <div class="itinerary-content">
+                            <h4>Day 2 – Munnar Hills</h4>
+                            <p>
+                                Journey to
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true" title="Munnar"
+                                    data-bs-content="<img src='images/munnar.jpg' class='popover-img rounded mb-2'><br>A serene hill station famous for sprawling <strong>tea estates</strong> and cool misty air.">
+                                    Munnar
+                                </span>, the picturesque hill station surrounded by
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Tea Plantations"
+                                    data-bs-content="<img src='images/tea-plantations.jpg' class='popover-img rounded mb-2'><br>Endless tea gardens producing some of the finest tea in South India.">
+                                    tea plantations
+                                </span> and misty mountains.
+                            </p>
+
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day2-1.jpg" class="media-img"
+                                            alt="Munnar Tea Estates"></div>
+                                    <div class="media-item"><img src="images/kerala-day2-2.jpg" class="media-img"
+                                            alt="Top Station Viewpoint"></div>
+                                    <div class="media-item"><img src="images/kerala-day2-3.jpg" class="media-img"
+                                            alt="Eravikulam National Park"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 2 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Hill-view resort/hotel in Munnar.</li>
+                                    <li><strong>Food:</strong> Local snacks like Banana Fritters and fresh tea.</li>
+                                    <li><strong>Activity to Do:</strong> Visit Eravikulam National Park and Tea Museum.
+                                    </li>
+                                    <li><strong>Where to Visit:</strong> Mattupetty Dam, Echo Point, Top Station.</li>
+                                    <li><strong>Famous For:</strong> Tea plantations and cool misty mornings.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 3 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">3</div>
+                        <div class="itinerary-content">
+                            <h4>Day 3 – Thekkady Wildlife Adventure</h4>
+                            <p>
+                                Experience the wild side of Kerala with a boat safari through
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Periyar Wildlife Sanctuary"
+                                    data-bs-content="<img src='images/periyar-lake.jpg' class='popover-img rounded mb-2'><br>Home to elephants, tigers, and rare birds — explore its beauty on the <strong>Periyar Lake boat safari</strong>.">
+                                    Periyar Wildlife Sanctuary
+                                </span>. Visit spice gardens to learn about
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Kerala Spices"
+                                    data-bs-content="<img src='images/spices.jpg' class='popover-img rounded mb-2'><br>Kerala is the 'Land of Spices' — known for cardamom, cinnamon, cloves, and black pepper.">
+                                    Kerala’s famous spices
+                                </span>.
+                            </p>
+
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day3-1.jpg" class="media-img"
+                                            alt="Periyar Lake Safari"></div>
+                                    <div class="media-item"><img src="images/kerala-day3-2.jpg" class="media-img"
+                                            alt="Elephants in Thekkady"></div>
+                                    <div class="media-item"><img src="images/kerala-day3-3.jpg" class="media-img"
+                                            alt="Spice Plantation Tour"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 3 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Nature resort near Periyar Wildlife Sanctuary.</li>
+                                    <li><strong>Food:</strong> Kerala Fish Curry and Appam.</li>
+                                    <li><strong>Activity to Do:</strong> Spice plantation tour, boat ride, Kalaripayattu
+                                        show.</li>
+                                    <li><strong>Where to Visit:</strong> Periyar Tiger Reserve, Kadathanadan Kalari
+                                        Centre.</li>
+                                    <li><strong>Famous For:</strong> Spices and wildlife encounters.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 4 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">4</div>
+                        <div class="itinerary-content">
+                            <h4>Day 4 – Alleppey Backwaters</h4>
+                            <p>
+                                Relax on a traditional
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Houseboat – Kettuvallam"
+                                    data-bs-content="<img src='images/houseboat.jpg' class='popover-img rounded mb-2'><br>A traditional wooden boat made from coir ropes and bamboo — offering luxury backwater cruises.">
+                                    houseboat
+                                </span>, drifting through the tranquil
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Kerala Backwaters"
+                                    data-bs-content="<img src='images/backwaters.jpg' class='popover-img rounded mb-2'><br>A network of lagoons and canals where nature and village life meet peacefully.">
+                                    backwaters
+                                </span> of
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Alleppey (Alappuzha)"
+                                    data-bs-content="<img src='images/alleppey.jpg' class='popover-img rounded mb-2'><br>Often called the 'Venice of the East' — famous for its scenic canals and palm-lined shores.">
+                                    Alleppey
+                                </span>.
+                            </p>
+
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day4-1.jpg" class="media-img"
+                                            alt="Houseboat in Alleppey"></div>
+                                    <div class="media-item"><img src="images/kerala-day4-2.jpg" class="media-img"
+                                            alt="Backwater Views"></div>
+                                    <div class="media-item"><img src="images/kerala-day4-3.jpg" class="media-img"
+                                            alt="Sunset on Houseboat"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 4 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Private A/C houseboat (full board).</li>
+                                    <li><strong>Food:</strong> Fresh seafood lunch and dinner onboard.</li>
+                                    <li><strong>Activity to Do:</strong> Backwater cruise and village life exploration.
+                                    </li>
+                                    <li><strong>Where to Visit:</strong> Vembanad Lake, local canals.</li>
+                                    <li><strong>Famous For:</strong> The Venice of the East experience.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 5 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">5</div>
+                        <div class="itinerary-content">
+                            <h4>Day 5 – Kovalam Beach</h4>
+                            <p>
+                                Spend your day unwinding on the golden sands of
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Kovalam Beach"
+                                    data-bs-content="<img src='images/kovalam.jpg' class='popover-img rounded mb-2'><br>A crescent-shaped beach famous for its <strong>lighthouse views</strong> and calm waters.">
+                                    Kovalam Beach
+                                </span>, one of Kerala’s most famous beaches.
+                            </p>
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day5-1.jpg" class="media-img"
+                                            alt="Kovalam Lighthouse"></div>
+                                    <div class="media-item"><img src="images/kerala-day5-2.jpg" class="media-img"
+                                            alt="Kovalam Beach Sunset"></div>
+                                    <div class="media-item"><img src="images/kerala-day5-3.jpg" class="media-img"
+                                            alt="Beach Cafes"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 5 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Beachfront resort in Kovalam.</li>
+                                    <li><strong>Food:</strong> Portuguese-style seafood and Kerala Parotta.</li>
+                                    <li><strong>Activity to Do:</strong> Sunset walk by the sea and shopping.</li>
+                                    <li><strong>Where to Visit:</strong> Lighthouse Beach, Hawa Beach.</li>
+                                    <li><strong>Famous For:</strong> Golden sands and relaxed vibes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 6 -->
+                    <div class="itinerary-item">
+                        <div class="timeline-point" style="background-color:#047857;">6</div>
+                        <div class="itinerary-content">
+                            <h4>Day 6 – Departure from Kochi</h4>
+                            <p>
+                                After a final breakfast, transfer to
+                                <span class="travel-tip" data-bs-toggle="popover" data-bs-html="true"
+                                    title="Cochin International Airport"
+                                    data-bs-content="<img src='images/kochi-airport.jpg' class='popover-img rounded mb-2'><br>The world’s first <strong>fully solar-powered airport</strong>, located near Kochi.">
+                                    Kochi International Airport
+                                </span> for your return journey.
+                            </p>
+
+
+                            <div class="day-video">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="day-video-frame"
+                                        src="https://www.youtube.com/embed/Q6Z4kAg4bGM?enablejsapi=1&mute=1&playsinline=1"
+                                        title="Kerala Travel Video"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+
+                            <div class="day-gallery">
+                                <div class="media-gallery-scroll d-flex gap-3">
+                                    <div class="media-item"><img src="images/kerala-day6-1.jpg" class="media-img"
+                                            alt="Airport Departure"></div>
+                                    <div class="media-item"><img src="images/kerala-day6-2.jpg" class="media-img"
+                                            alt="Souvenir Shopping"></div>
+                                    <div class="media-item"><img src="images/kerala-day6-3.jpg" class="media-img"
+                                            alt="Last Glimpse of Sea"></div>
+                                </div>
+                            </div>
+
+                            <div class="package-details-breakdown">
+                                <h6><span class="text-success">⭐</span> Day 6 Details:</h6>
+                                <ul>
+                                    <li><strong>Stay:</strong> Checkout from hotel.</li>
+                                    <li><strong>Food:</strong> Breakfast only.</li>
+                                    <li><strong>Activity to Do:</strong> Last-minute shopping or airport drop.</li>
+                                    <li><strong>Where to Visit:</strong> Kochi International Airport.</li>
+                                    <li><strong>Famous For:</strong> Warm farewell and happy memories.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Inquiry Modal (Reusing structure from homepage.html concept) -->
+                
+                <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-success text-white">
+                                <h1 class="modal-title fs-5" id="inquiryModalLabel">Book Kerala Trip</h1>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="kerala-inquiry-form">
+                                    <input type="hidden" name="destination" value="Kerala - 6D/5N">
+                                    <div class="mb-3">
+                                        <label for="inquiryName" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="inquiryName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inquiryEmail" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="inquiryEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inquiryDate" class="form-label">Preferred Travel Date</label>
+                                        <input type="date" class="form-control" id="inquiryDate">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inquiryGuests" class="form-label">Number of Guests</label>
+                                        <input type="number" class="form-control" id="inquiryGuests" min="1" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100">Confirm Inquiry</button>
+                                </form>
+                                <div id="kerala-confirmation-message" class="alert mt-3" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<!-- 🌿 Modern Footer -->
+<footer class="kerala-footer text-center text-lg-start text-white mt-5">
+  <div class="container py-4">
+
+    <div class="row align-items-center gy-3">
+
+      <!-- Branding & Tagline -->
+      <div class="col-lg-4 text-center text-lg-start">
+        <h3 class="fw-bold mb-1">Trip Junction</h3>
+        <p class="footer-text mb-0">Your trusted planner for all India travel experiences 🌍</p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-4 text-center">
+        <div class="footer-contact">
+          <p class="mb-1">📞 <a href="tel:+917295060470" class="footer-link">+91 72950 60470</a></p>
+          <p class="mb-0">✉ <a href="mailto:tripjunctionofficial@gmail.com" class="footer-link">tripjunctionofficial@gmail.com</a></p>
+        </div>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="col-lg-4 text-center text-lg-end">
+        <a href="https://www.facebook.com" class="social-link me-3" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com" class="social-link me-3" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com" class="social-link me-3" target="_blank"><i class="bi bi-youtube"></i></a>
+        <a href="https://wa.me/917295060470" class="social-link" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="my-3 border-light">
+
+    <!-- Copyright -->
+    <div class="text-center small">
+      © <span id="year"></span> Trip Junction. All Rights Reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YouTube Iframe API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- Your Custom Script (video hover/scroll logic) -->
+<script src="script.js"></script>
+
+<!-- Page Specific JS -->
+<script src="kerala.js"></script>
+</div>
+</div>
+</div>
+</body>
